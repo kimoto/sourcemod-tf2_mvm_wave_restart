@@ -42,6 +42,7 @@ public Action:Command_MvMWaveRestart(args)
   new ent = FindEntityByClassname(-1, "tf_objective_resource");
   if(ent == -1){
     LogMessage("tf_objective_resource not found");
+    return;
   }
   JumpToWave(GetEntData(ent, FindSendPropInfo("CTFObjectiveResource", "m_nMannVsMachineWaveCount")));
 }
@@ -51,6 +52,7 @@ public Action:Command_MvMJumpToNextWave(args)
   new ent = FindEntityByClassname(-1, "tf_objective_resource");
   if(ent == -1){
     LogMessage("tf_objective_resource not found");
+    return;
   }
   new current_wave = GetEntData(ent, FindSendPropInfo("CTFObjectiveResource", "m_nMannVsMachineWaveCount"));
   new max_wave = GetEntData(ent, FindSendPropInfo("CTFObjectiveResource", "m_nMannVsMachineMaxWaveCount"));
